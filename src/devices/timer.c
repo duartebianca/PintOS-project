@@ -30,6 +30,9 @@ static void busy_wait (int64_t loops);
 static void real_time_sleep (int64_t num, int32_t denom);
 static void real_time_delay (int64_t num, int32_t denom);
 
+/* List of sleeping threads */
+static struct list sleeping_list;
+
 /* Sets up the timer to interrupt TIMER_FREQ times per second,
    and registers the corresponding interrupt. */
 void
@@ -37,6 +40,7 @@ timer_init (void)
 {
   pit_configure_channel (0, 2, TIMER_FREQ);
   intr_register_ext (0x20, timer_interrupt, "8254 Timer");
+  list_init(&sleeping_list); /* Initialize the sleeping list */ 
 }
 
 /* Calibrates loops_per_tick, used to implement brief delays. */
@@ -89,12 +93,26 @@ timer_elapsed (int64_t then)
 void
 timer_sleep (int64_t ticks) 
 {
-  int64_t start = timer_ticks ();
+    if (ticks <= 0) return;
 
-  ASSERT (intr_get_level () == INTR_ON);
-  while (timer_elapsed (start) < ticks) 
-    thread_yield ();
+    enum intr_level old_level = intr_disable(); /* Disable interrupts for security */ 
+
+    struct thread *current = thread_current();
+    current->wake_up_time = timer_ticks() + ticks;
+
+    /* Inserts into the sleeping list, keeping the order by wake_up_time */
+    struct list_elem *e = list_begin(&sleeping_list);
+    while (e != list_end(&sleeping_list)) {
+        struct thread *t = list_entry(e, struct thread, sleepelem);
+        if (current->wake_up_time < t->wake_up_time) break;
+        e = list_next(e);
+    }
+    list_insert(e, &current->sleepelem);
+
+    thread_block(); /* Blocks the thread until it is awakened */
+    intr_set_level(old_level); /* Restores interrupts */
 }
+
 
 /* Sleeps for approximately MS milliseconds.  Interrupts must be
    turned on. */
@@ -172,6 +190,15 @@ timer_interrupt (struct intr_frame *args UNUSED)
 {
   ticks++;
   thread_tick ();
+  struct list_elem *e = list_begin(&sleeping_list);
+  while (e != list_end(&sleeping_list)) {
+        struct thread *t = list_entry(e, struct thread, sleepelem);
+
+        if (t->wake_up_time > timer_ticks()) break;
+
+        e = list_remove(e); // Remove a thread da lista
+        thread_unblock(t); // Desbloqueia a thread
+  }
 }
 
 /* Returns true if LOOPS iterations waits for more than one timer

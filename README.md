@@ -136,7 +136,7 @@ não precisa nem no `make check` do src/threads/build (se der algum erro oque fo
    
    | # | Teste | Implementada | Testada | Funcionando |
    |---|-----------|:-----------:|:-------:|:-----------:|
-   | 1  | `alarm-single`|      ❌     |    ❌    |      ❌      |
+   | 1  | `alarm-single`|      ✅     |    ✅    |      ✅      |
    | 2  | `alarm-multiple`|      ❌     |    ❌    |      ❌      |
    | 3  | `alarm-simultaneous`|      ❌     |    ❌    |      ❌      |
    | 4  | `alarm-priority`*|      ❌     |    ❌    |      ❌      |
