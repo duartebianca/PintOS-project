@@ -130,7 +130,7 @@ void thread_print_stats(void);
 
 typedef void thread_func(void *aux);
 tid_t thread_create(const char *name, int priority, thread_func *, void *);
-//bool comp_priority(const struct list_elem *a, const struct list_elem *b, void *aux);
+
 
 
 void thread_block(void);
