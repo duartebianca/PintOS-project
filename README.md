@@ -100,7 +100,7 @@ não precisa nem no `make check` do src/threads/build (se der algum erro oque fo
 
 ### Objetivos:
 - [X] Alarm Clock;
-- [ ] Advanced Scheduler - Multi-Level Feedback Queue (mlfqs);
+- [X] Advanced Scheduler - Multi-Level Feedback Queue (mlfqs);
 ### Detalhamentos:
 
 <details>
