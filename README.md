@@ -1,4 +1,23 @@
 # Introduzindo PintOS
+Nossa implementação funciona corretamente para os seguintes casos:
+| # | Teste | Implementada | Testada | Funcionando |
+   |---|-----------|:-----------:|:-------:|:-----------:|
+   | 1  | `alarm-single`|      ✅     |    ✅    |      ✅      |
+   | 2  | `alarm-multiple`|       ✅     |    ✅    |       ✅       |
+   | 3  | `alarm-simultaneous`|      ✅     |    ✅    |      ✅     |
+   | 5  | `alarm-zero`|       ✅     |    ✅     |      ✅      |
+   | 6  | `alarm-negative`|      ✅      |    ✅    |      ✅     |
+   | 19 | `mlfqs-load-1`|         ✅      |    ✅    |      ✅     |
+   | 20 | `mlfqs-load-60`|          ✅      |    ✅    |      ✅     |
+   | 21 | `mlfqs-load-avg`|         ✅      |    ✅    |      ✅     |
+   | 22 | `mlfqs-recent-1`|           ✅      |    ✅    |      ✅     |
+   | 23 | `mlfqs-fair-2`|           ✅      |    ✅    |      ✅     |
+   | 24 | `mlfqs-fair-20`|          ✅      |    ✅    |      ✅     |
+   | 25 | `mlfqs-nice-2`|          ✅      |    ✅    |      ✅     |
+   | 26 | `mlfqs-nice-10`|           ✅      |    ✅    |      ✅     |
+   | 27 | `mlfqs-block`|      ❌     |    ❌    |      ❌      |
+
+   
 <details>
 <summary>Mudanças no ./src </summary>
 
@@ -141,14 +160,14 @@ não precisa nem no `make check` do src/threads/build (se der algum erro oque fo
    | 3  | `alarm-simultaneous`|      ✅     |    ✅    |      ✅     |
    | 5  | `alarm-zero`|       ✅     |    ✅     |      ✅      |
    | 6  | `alarm-negative`|      ✅      |    ✅    |      ✅     |
-   | 19 | `mlfqs-load-1`|      ❌     |    ❌    |      ❌      |
-   | 20 | `mlfqs-load-60`|      ❌     |    ❌    |      ❌      |
-   | 21 | `mlfqs-load-avg`|      ❌     |    ❌    |      ❌      |
-   | 22 | `mlfqs-recent-1`|      ❌     |    ❌    |      ❌      |
-   | 23 | `mlfqs-fair-2`|      ❌     |    ❌    |      ❌      |
-   | 24 | `mlfqs-fair-20`|      ❌     |    ❌    |      ❌      |
-   | 25 | `mlfqs-nice-2`|      ❌     |    ❌    |      ❌      |
-   | 26 | `mlfqs-nice-10`|      ❌     |    ❌    |      ❌      |
+   | 19 | `mlfqs-load-1`|         ✅      |    ✅    |      ✅     |
+   | 20 | `mlfqs-load-60`|          ✅      |    ✅    |      ✅     |
+   | 21 | `mlfqs-load-avg`|         ✅      |    ✅    |      ✅     |
+   | 22 | `mlfqs-recent-1`|           ✅      |    ✅    |      ✅     |
+   | 23 | `mlfqs-fair-2`|           ✅      |    ✅    |      ✅     |
+   | 24 | `mlfqs-fair-20`|          ✅      |    ✅    |      ✅     |
+   | 25 | `mlfqs-nice-2`|          ✅      |    ✅    |      ✅     |
+   | 26 | `mlfqs-nice-10`|           ✅      |    ✅    |      ✅     |
    | 27 | `mlfqs-block`|      ❌     |    ❌    |      ❌      |
    
    
