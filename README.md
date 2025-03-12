@@ -79,7 +79,7 @@ não precisa nem no `make check` do src/threads/build (se der algum erro oque fo
 </details>
 
 ### Objetivos:
-- [ ] Alarm Clock;
+- [X] Alarm Clock;
 - [ ] Advanced Scheduler - Multi-Level Feedback Queue (mlfqs);
 ### Detalhamentos:
 
@@ -131,29 +131,16 @@ não precisa nem no `make check` do src/threads/build (se der algum erro oque fo
 <details>
     <summary>Tests</summary>
    
-   - Esses são todos os testes que serão executados quando usar o comando `make check` (caso não altere o `scr/tests/threads/tests.c`):
-   - Obs: Pode passar `make check -j<numero de nproc>` para ele rodar os testes de forma paralela, para descobrir um valor bom de nproc é só rodar o comando `nproc`, que retorna o número de unidades de processamento disponíveis no sistema ou para o processo atual.
+   - Esses são todos os 14 testes que serão executados quando usar o comando `make check`:
+   - Obs: Pode passar `make check -j<numero de nproc>` para ele rodar os testes de forma paralela, para descobrir um valor bom de nproc é só rodar o comando `nproc`, que retorna o número de unidades de processamento disponíveis no sistema ou para o processo atual;
    
    | # | Teste | Implementada | Testada | Funcionando |
    |---|-----------|:-----------:|:-------:|:-----------:|
    | 1  | `alarm-single`|      ✅     |    ✅    |      ✅      |
-   | 2  | `alarm-multiple`|      ❌     |    ❌    |      ❌      |
-   | 3  | `alarm-simultaneous`|      ❌     |    ❌    |      ❌      |
-   | 4  | `alarm-priority`*|      ❌     |    ❌    |      ❌      |
-   | 5  | `alarm-zero`|      ❌     |    ❌    |      ❌      |
-   | 6  | `alarm-negative`|      ❌     |    ❌    |      ❌      |
-   | 7  | `priority-change`*|      ❌     |    ❌    |      ❌      |
-   | 8  | `priority-donate-one`*|      ❌     |    ❌    |      ❌      |
-   | 9  | `priority-donate-multiple`*|      ❌     |    ❌    |      ❌      |
-   | 10 | `priority-donate-multiple2`*|      ❌     |    ❌    |      ❌      |
-   | 11 | `priority-donate-nest`*|      ❌     |    ❌    |      ❌      |
-   | 12 | `priority-donate-sema`*|      ❌     |    ❌    |      ❌      |
-   | 13 | `priority-donate-lower`*|      ❌     |    ❌    |      ❌      |
-   | 14 | `priority-fifo`*|      ❌     |    ❌    |      ❌      |
-   | 15 | `priority-preempt`*|      ❌     |    ❌    |      ❌      |
-   | 16 | `priority-sema`*|      ❌     |    ❌    |      ❌      |
-   | 17 | `priority-condvar`*|      ❌     |    ❌    |      ❌      |
-   | 18 | `priority-donate-chain`*|      ❌     |    ❌    |      ❌      |
+   | 2  | `alarm-multiple`|       ✅     |    ✅    |       ✅       |
+   | 3  | `alarm-simultaneous`|      ✅     |    ✅    |      ✅     |
+   | 5  | `alarm-zero`|       ✅     |    ✅     |      ✅      |
+   | 6  | `alarm-negative`|      ✅      |    ✅    |      ✅     |
    | 19 | `mlfqs-load-1`|      ❌     |    ❌    |      ❌      |
    | 20 | `mlfqs-load-60`|      ❌     |    ❌    |      ❌      |
    | 21 | `mlfqs-load-avg`|      ❌     |    ❌    |      ❌      |
