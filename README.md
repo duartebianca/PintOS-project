@@ -1,6 +1,7 @@
 # Introduzindo PintOS
 Nossa implementação funciona corretamente para os seguintes casos:
 ```bash
+pass tests/threads/mlfqs-recent-1
 pass tests/threads/alarm-single
 pass tests/threads/alarm-multiple
 pass tests/threads/alarm-simultaneous
@@ -14,8 +15,8 @@ pass tests/threads/mlfqs-fair-2
 pass tests/threads/mlfqs-fair-20
 pass tests/threads/mlfqs-nice-2
 pass tests/threads/mlfqs-nice-10
-FAIL tests/threads/mlfqs-block
-1 of 14 tests failed.
+pass tests/threads/mlfqs-block
+All 14 tests passed.
 ```
 
 
@@ -169,7 +170,7 @@ não precisa nem no `make check` do src/threads/build (se der algum erro oque fo
    | 24 | `mlfqs-fair-20`|          ✅      |    ✅    |      ✅     |
    | 25 | `mlfqs-nice-2`|          ✅      |    ✅    |      ✅     |
    | 26 | `mlfqs-nice-10`|           ✅      |    ✅    |      ✅     |
-   | 27 | `mlfqs-block`|      ❌     |    ❌    |      ❌      |
+   | 27 | `mlfqs-block`|       ✅      |    ✅    |      ✅     |
    
    
 </details>
