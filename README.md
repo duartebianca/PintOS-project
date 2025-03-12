@@ -1,23 +1,22 @@
 # Introduzindo PintOS
 Nossa implementação funciona corretamente para os seguintes casos:
-| # | Teste | Implementada | Testada | Funcionando |
-   |---|-----------|:-----------:|:-------:|:-----------:|
-   | 1  | `alarm-single`|      ✅     |    ✅    |      ✅      |
-   | 2  | `alarm-multiple`|       ✅     |    ✅    |       ✅       |
-   | 3  | `alarm-simultaneous`|      ✅     |    ✅    |      ✅     |
-   | 5  | `alarm-zero`|       ✅     |    ✅     |      ✅      |
-   | 6  | `alarm-negative`|      ✅      |    ✅    |      ✅     |
-   | 19 | `mlfqs-load-1`|         ✅      |    ✅    |      ✅     |
-   | 20 | `mlfqs-load-60`|          ✅      |    ✅    |      ✅     |
-   | 21 | `mlfqs-load-avg`|         ✅      |    ✅    |      ✅     |
-   | 22 | `mlfqs-recent-1`|           ✅      |    ✅    |      ✅     |
-   | 23 | `mlfqs-fair-2`|           ✅      |    ✅    |      ✅     |
-   | 24 | `mlfqs-fair-20`|          ✅      |    ✅    |      ✅     |
-   | 25 | `mlfqs-nice-2`|          ✅      |    ✅    |      ✅     |
-   | 26 | `mlfqs-nice-10`|           ✅      |    ✅    |      ✅     |
-   | 27 | `mlfqs-block`|      ❌     |    ❌    |      ❌      |
+pass tests/threads/alarm-single
+pass tests/threads/alarm-multiple
+pass tests/threads/alarm-simultaneous
+pass tests/threads/alarm-zero
+pass tests/threads/alarm-negative
+pass tests/threads/mlfqs-load-1
+pass tests/threads/mlfqs-load-60
+pass tests/threads/mlfqs-load-avg
+pass tests/threads/mlfqs-recent-1
+pass tests/threads/mlfqs-fair-2
+pass tests/threads/mlfqs-fair-20
+pass tests/threads/mlfqs-nice-2
+pass tests/threads/mlfqs-nice-10
+FAIL tests/threads/mlfqs-block
+1 of 14 tests failed.
 
-   
+
 <details>
 <summary>Mudanças no ./src </summary>
 
